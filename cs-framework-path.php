@@ -7,9 +7,15 @@
  * @version 1.0.0
  *
  */
-defined( 'CS_VERSION' )    or  define( 'CS_VERSION',    '1.0.1' );
-defined( 'CS_OPTION' )     or  define( 'CS_OPTION',     '_cs_options' );
-defined( 'CS_CUSTOMIZE' )  or  define( 'CS_CUSTOMIZE',  '_cs_customize_options' );
+add_action( 'init', 'cs_define_init', 2 );
+if( ! function_exists( 'cs_define_init' ) ) {
+	function cs_define_init() {
+		defined( 'CS_VERSION' )    or  define( 'CS_VERSION',    '1.0.1' );
+		defined( 'CS_OPTION' )     or  define( 'CS_OPTION',     '_cs_options' );
+		defined( 'CS_CUSTOMIZE' )  or  define( 'CS_CUSTOMIZE',  '_cs_customize_options' );
+	}
+}
+
 
 /**
  *
